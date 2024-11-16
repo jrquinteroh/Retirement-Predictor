@@ -384,7 +384,7 @@ elif page == "About the Dataset":
     )
 
     st.subheader("""
-    Welcome to the **Bank Customer Retirement Dataset**! This dataset offers a glimpse into the financial planning of 500 customers, focusing on their journey towards retirement. Let's break it down! 🚀
+    Welcome to the **Bank Customer Retirement Dataset**! This dataset offers a glimpse into the financial planning of 500 customers, focusing on their journey towards retirement. Let's break it down!
     """)
 
     st.subheader("Dataset Overview")
