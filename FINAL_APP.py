@@ -249,7 +249,12 @@ if page == "Home":
     )
 
     image = Image.open("streamlit.jpg")
-    st.image(image, caption="Credits: DALL·E", use_column_width=True)
+    #st.image(image, caption="Credits: DALL·E", use_column_width=True)
+
+    resized_img = image.resize((300, 200))  # Resize to 300x200 pixels
+
+    # Display resized image
+    st.image(resized_img)
 
 
 # -------------------------
