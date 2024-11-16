@@ -263,7 +263,11 @@ elif page == "Get Your Predictions":
     st.title("Retirement Prediction")
 
     image = Image.open("prediction.jpg")
-    st.image(image, caption="Credits: DALL·E", use_column_width=True)
+    resized_img = image.resize((500, 400)) 
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image(resized_img, caption="Credits: DALL·E")
 
     st.markdown("---")
 
@@ -763,7 +767,11 @@ elif page == "About the Model":
 
 
     image = Image.open("rfc.jpg")
-    st.image(image, caption="Credits: DALL·E", use_column_width=True)
+    resized_img = image.resize((500, 400)) 
+
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image(resized_img, caption="Credits: DALL·E")
 
 # -------------------------
 # Footer
