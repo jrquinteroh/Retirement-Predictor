@@ -5,6 +5,7 @@ import pickle
 import plotly.express as px
 from PIL import Image
 import base64
+import io
 
 # -------------------------
 # Set Streamlit Page Configuration
@@ -249,24 +250,28 @@ if page == "Home":
     )
 
     image = Image.open("streamlit.jpg")
+    buffer = io.BytesIO()
+    image.save(buffer, format="PNG")
+    encoded_image = base64.b64encode(buffer.getvalue()).decode()
+    
+    center_image_style = """
+    <style>
+    .centered-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    </style>
+    """
+    
+    st.markdown(center_image_style, unsafe_allow_html=True)
     st.markdown(
-        """
-        <style>
-        .centered-img {
-            display: flex;
-            justify-content: center;  /* Center horizontally */
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        </style>
-        <div class="centered-img">
-        """,
+        f'<img src="data:image/png;base64,{encoded_image}" class="centered-img" alt="Credits: DALL·E">',
         unsafe_allow_html=True,
     )
-    
-    st.image(image, caption="Credits: DALL·E", width=700)
-    
-    st.markdown("</div>", unsafe_allow_html=True)
 
 
 # -------------------------
@@ -276,24 +281,28 @@ elif page == "Get Your Predictions":
     st.title("Retirement Prediction")
 
     image = Image.open("prediction.jpg")
+    buffer = io.BytesIO()
+    image.save(buffer, format="PNG")
+    encoded_image = base64.b64encode(buffer.getvalue()).decode()
+    
+    center_image_style = """
+    <style>
+    .centered-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    </style>
+    """
+    
+    st.markdown(center_image_style, unsafe_allow_html=True)
     st.markdown(
-        """
-        <style>
-        .centered-img {
-            display: flex;
-            justify-content: center;  /* Center horizontally */
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        </style>
-        <div class="centered-img">
-        """,
+        f'<img src="data:image/png;base64,{encoded_image}" class="centered-img" alt="Credits: DALL·E">',
         unsafe_allow_html=True,
     )
-    
-    st.image(image, caption="Credits: DALL·E", width=700)
-    
-    st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("---")
 
@@ -803,22 +812,28 @@ elif page == "About the Model":
 
 
     image = Image.open("rfc.jpg")
+    buffer = io.BytesIO()
+    image.save(buffer, format="PNG")
+    encoded_image = base64.b64encode(buffer.getvalue()).decode()
+    
+    center_image_style = """
+    <style>
+    .centered-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 700px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    </style>
+    """
+    
+    st.markdown(center_image_style, unsafe_allow_html=True)
     st.markdown(
-        """
-        <style>
-        .centered-img {
-            display: flex;
-            justify-content: center;  /* Center horizontally */
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        </style>
-        <div class="centered-img">
-        """,
+        f'<img src="data:image/png;base64,{encoded_image}" class="centered-img" alt="Credits: DALL·E">',
         unsafe_allow_html=True,
     )
-    
-    st.image(image, caption="Credits: DALL·E", width=700)
     
     st.markdown("</div>", unsafe_allow_html=True)
 
