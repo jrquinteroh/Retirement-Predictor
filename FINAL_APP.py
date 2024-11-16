@@ -249,7 +249,7 @@ if page == "Home":
     )
 
     image = Image.open("streamlit.jpg")
-    col1, col2, col3 = st.columns([1, 8, 1])
+    col1, col2, col3 = st.columns([1, 6, 1])
     with col2:
         st.image(image, caption="Credits: DALL·E", width=700)
 
@@ -261,7 +261,7 @@ elif page == "Get Your Predictions":
     st.title("Retirement Prediction")
 
     image = Image.open("prediction.jpg")
-    col1, col2, col3 = st.columns([1, 8, 1])
+    col1, col2, col3 = st.columns([1, 6, 1])
     with col2:
         st.image(image, caption="Credits: DALL·E", width=700)
 
@@ -763,7 +763,7 @@ elif page == "About the Model":
 
 
     image = Image.open("rfc.jpg")
-    col1, col2, col3 = st.columns([1, 8, 1])
+    col1, col2, col3 = st.columns([1, 6, 1])
     with col2:
         st.image(image, caption="Credits: DALL·E", width=700)
 
