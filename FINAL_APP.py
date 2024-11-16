@@ -163,8 +163,8 @@ st.sidebar.title("🔍 Navigation")
 
 st.sidebar.write('From here, navegate to wherever you want! Just click anywhere in the select box and choose which page to go into!')
 
-page = st.sidebar.selectbox(
-    "",
+page = st.sidebar.radio(
+    "Navigate to:",
     options=[
         "🏠 Home",
         "🔮 Get Your Predictions",
@@ -172,6 +172,7 @@ page = st.sidebar.selectbox(
         "🧠 About the Model",
     ],
 )
+
 
 st.sidebar.markdown("---")
 
