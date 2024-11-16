@@ -1,0 +1,10 @@
+[theme]
+primaryColor = "#28a745"  # Money-like green
+backgroundColor = "#2c2c2c"  # Dark background
+secondaryBackgroundColor = "#3a3a3a"  # Slightly lighter for contrast
+textColor = "#ffffff"  # White text for visibility
+font = "sans serif"
+
+[layout]
+# Centering layout to focus on content
+wide = true
