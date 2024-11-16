@@ -249,7 +249,7 @@ if page == "Home":
     )
 
     image = Image.open("streamlit.jpg")
-    resized_img = image.resize((1500, 1500)) 
+    resized_img = image.resize((2000, 2000)) 
 
     col1, col2, col3 = st.columns(3)
     with col2:
@@ -263,7 +263,7 @@ elif page == "Get Your Predictions":
     st.title("Retirement Prediction")
 
     image = Image.open("prediction.jpg")
-    resized_img = image.resize((1500, 1500)) 
+    resized_img = image.resize((2000, 2000)) 
 
     col1, col2, col3 = st.columns(3)
     with col2:
@@ -767,7 +767,7 @@ elif page == "About the Model":
 
 
     image = Image.open("rfc.jpg")
-    resized_img = image.resize((1500, 1500)) 
+    resized_img = image.resize((2000, 2000)) 
 
     col1, col2, col3 = st.columns(3)
     with col2:
