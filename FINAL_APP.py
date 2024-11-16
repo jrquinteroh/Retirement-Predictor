@@ -179,7 +179,7 @@ st.sidebar.markdown("---")
 # -------------------------
 # Home Page
 # -------------------------
-if page == "🏠 Home":
+if page == " Home":
     st.title("🏠 Home")
 
     st.markdown(
