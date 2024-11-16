@@ -300,7 +300,7 @@ elif page == "Get Your Predictions":
 
                 prob = prediction_proba[prediction] * 100
 
-                st.markdown(f"**Explanation:** The model is **{prob:.2f}%** confident that this customer is **{predicted_class_label.lower()}**.")
+                st.markdown(f"**Explanation:** The model is **{prob:.2f}%** confident that this customer is **{predicted_class_label.lower()}** basing the analysis on their 401K savings and their age.")
 
                 proba_df = pd.DataFrame({
                     'Class': [class_mapping.get(cls, 'Unknown') for cls in model.named_steps['classifier'].classes_],
