@@ -249,9 +249,23 @@ if page == "Home":
     )
 
     image = Image.open("streamlit.jpg")
-    col1, col2, col3 = st.columns([1, 10, 1])
-    with col2:
-        st.image(image, caption="Credits: DALL·E", width=700)
+    st.markdown(
+        """
+        <style>
+        .centered-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    
+    # Apply the custom class to the image
+    st.markdown('<div class="centered-image">', unsafe_allow_html=True)
+    st.image(image, caption="Credits: DALL·E", width=700)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 
 # -------------------------
@@ -261,9 +275,23 @@ elif page == "Get Your Predictions":
     st.title("Retirement Prediction")
 
     image = Image.open("prediction.jpg")
-    col1, col2, col3 = st.columns([1, 10, 1])
-    with col2:
-        st.image(image, caption="Credits: DALL·E", width=700)
+    st.markdown(
+        """
+        <style>
+        .centered-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    
+    # Apply the custom class to the image
+    st.markdown('<div class="centered-image">', unsafe_allow_html=True)
+    st.image(image, caption="Credits: DALL·E", width=700)
+    st.markdown('</div>', unsafe_allow_html=True)
 
     st.markdown("---")
 
@@ -763,9 +791,23 @@ elif page == "About the Model":
 
 
     image = Image.open("rfc.jpg")
-    col1, col2, col3 = st.columns([1, 10, 1])
-    with col2:
-        st.image(image, caption="Credits: DALL·E", width=700)
+    st.markdown(
+        """
+        <style>
+        .centered-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+    
+    # Apply the custom class to the image
+    st.markdown('<div class="centered-image">', unsafe_allow_html=True)
+    st.image(image, caption="Credits: DALL·E", width=700)
+    st.markdown('</div>', unsafe_allow_html=True)
 
 # -------------------------
 # Footer
