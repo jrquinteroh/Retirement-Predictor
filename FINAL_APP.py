@@ -406,14 +406,24 @@ elif page == "Get Your Predictions":
 elif page == "About the Dataset":
     st.title("About the Dataset: Bank Customer Retirement Insights")
 
-    st.markdown(
-        """
-        <div class="header-img">
-            <img src="https://media2.giphy.com/media/67ThRZlYBvibtdF9JH/giphy.gif?cid=6c09b952jg7ns0jme6spv2anset5msh0453sru59xuwalaep&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Dataset GIF" width="700">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+st.markdown(
+    """
+    <style>
+    .header-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    </style>
+    <div class="header-img">
+        <img src="https://media2.giphy.com/media/67ThRZlYBvibtdF9JH/giphy.gif?cid=6c09b952jg7ns0jme6spv2anset5msh0453sru59xuwalaep&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Dataset GIF" width="700">
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 
     st.subheader("""
     Welcome to the **Bank Customer Retirement Dataset**! This dataset offers a glimpse into the financial planning of 500 customers, focusing on their journey towards retirement. Let's break it down!
