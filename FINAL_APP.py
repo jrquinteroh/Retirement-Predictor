@@ -186,7 +186,7 @@ if page == "Home":
         """
         Welcome to the **Bank Customer Retirement Analysis** app! 
 
-        This app is designed to help you explore and analyze retirement-related data, and predict whether a customer is likely to retire based on their age and 401K savings.
+        This app is designed to help you explore and analyze retirement-related data, and predict whether a customer is likely to retire (or be retired) based on their age and 401K savings.
         """
     )
 
