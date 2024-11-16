@@ -254,8 +254,7 @@ if page == "Home":
         <style>
         .centered-img {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center;  /* Center horizontally */
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -282,8 +281,7 @@ elif page == "Get Your Predictions":
         <style>
         .centered-img {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center;  /* Center horizontally */
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -810,8 +808,7 @@ elif page == "About the Model":
         <style>
         .centered-img {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: center;  /* Center horizontally */
             margin-top: 20px;
             margin-bottom: 20px;
         }
