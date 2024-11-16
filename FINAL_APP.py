@@ -257,14 +257,8 @@ if page == "🏠 Home":
 elif page == "🔮 Get Your Predictions":
     st.title("🔮 Retirement Prediction")
 
-    st.markdown(
-        """
-        <div class="header-img">
-            <img src="https://media.gettyimages.com/id/1136346822/es/vector/inversi%C3%B3n-y-gesti%C3%B3n-de-an%C3%A1lisis-de-datos-empresariales-isom%C3%A9tricos.jpg?s=612x612&w=0&k=20&c=rnUJ0swNUFY4ERQp-70ckYObFOC50uRkVcmbtGq-0gU=" alt="Prediction Image" width="700">
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    image = Image.open("prediction.jpg")
+    st.image(image, caption="Credits: DALL·E", use_column_width=True)
 
     st.markdown("---")
 
