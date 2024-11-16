@@ -10,7 +10,7 @@ import base64
 # Set Streamlit Page Configuration
 # -------------------------
 st.set_page_config(
-    page_title="🎉 Bank Customer Retirement Analysis 🎉",
+    page_title="Bank Customer Retirement Analysis",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -159,17 +159,17 @@ model = load_model()
 # -------------------------
 
 # Sidebar title
-st.sidebar.title("🔍 Navigation")
+st.sidebar.title("Navigation")
 
 st.sidebar.write('From here, navegate to wherever you want! Just click anywhere in the select box and choose which page to go into!')
 
 page = st.sidebar.radio(
     "Navigate to:",
     options=[
-        "🏠 Home",
-        "🔮 Get Your Predictions",
-        "📊 About the Dataset",
-        "🧠 About the Model",
+        "Home",
+        "Get Your Predictions",
+        "About the Dataset",
+        "About the Model",
     ],
 )
 
@@ -179,12 +179,12 @@ st.sidebar.markdown("---")
 # -------------------------
 # Home Page
 # -------------------------
-if page == "🏠 Home":
-    st.title("🏠 Home")
+if page == "Home":
+    st.title("Home")
 
     st.markdown(
         """
-        Welcome to the **Bank Customer Retirement Analysis** app! 🎉
+        Welcome to the **Bank Customer Retirement Analysis** app! 
 
         This app is designed to help you explore and analyze retirement-related data, and predict whether a customer is likely to retire based on their age and 401K savings.
         """
@@ -194,7 +194,7 @@ if page == "🏠 Home":
     with col1:
         st.markdown(
             """
-            ## 🚀 Features
+            ## Features
 
             - **Get Your Predictions:** Input your age and 401K savings to predict your retirement status.
             - **About the Dataset:** Dive deep into the dataset with interactive visualizations and discover meaningful insights.
@@ -205,7 +205,7 @@ if page == "🏠 Home":
     with col2:
         st.markdown(
             """
-            ## 🛠️ Technologies Used
+            ## Technologies Used
 
             - **Streamlit:** For building the interactive web app.
             - **Plotly:** For creating dynamic and interactive visualizations.
@@ -238,7 +238,7 @@ if page == "🏠 Home":
         <div style='text-align: center;'>
         Developed By: Juan Quintero
 
-        Developed For: IE University: MBD - Machine Learning 2 🚀
+        Developed For: IE University: MBD - Machine Learning 2 
 
             📧 Contact
 
@@ -255,8 +255,8 @@ if page == "🏠 Home":
 # -------------------------
 # Get Your Predictions Page
 # -------------------------
-elif page == "🔮 Get Your Predictions":
-    st.title("🔮 Retirement Prediction")
+elif page == "Get Your Predictions":
+    st.title("Retirement Prediction")
 
     image = Image.open("prediction.jpg")
     st.image(image, caption="Credits: DALL·E", use_column_width=True)
@@ -266,7 +266,7 @@ elif page == "🔮 Get Your Predictions":
     st.subheader("📝 Input Features")
 
     Age = st.number_input(
-        label="🎂 Age",
+        label="Age",
         min_value=int(data['Age'].min()),
         max_value=int(data['Age'].max()),
         value=int(data['Age'].mean()),
@@ -274,7 +274,7 @@ elif page == "🔮 Get Your Predictions":
     )
 
     savings_401k = st.number_input(
-        label="💰 401K Savings ($)",
+        label="401K Savings ($)",
         min_value=float(data['401K Savings'].min()),
         max_value=float(data['401K Savings'].max()),
         value=float(data['401K Savings'].mean()),
@@ -300,7 +300,7 @@ elif page == "🔮 Get Your Predictions":
 
                 prob = prediction_proba[prediction] * 100
 
-                st.markdown(f"🧠 **Explanation:** The model is **{prob:.2f}%** confident that this customer will **{predicted_class_label.lower()}**.")
+                st.markdown(f"**Explanation:** The model is **{prob:.2f}%** confident that this customer will **{predicted_class_label.lower()}**.")
 
                 proba_df = pd.DataFrame({
                     'Class': [class_mapping.get(cls, 'Unknown') for cls in model.named_steps['classifier'].classes_],
@@ -371,8 +371,8 @@ elif page == "🔮 Get Your Predictions":
 # -------------------------
 # About the Dataset Page
 # -------------------------
-elif page == "📊 About the Dataset":
-    st.title("📊 About the Dataset: Bank Customer Retirement Insights")
+elif page == "About the Dataset":
+    st.title("About the Dataset: Bank Customer Retirement Insights")
 
     st.markdown(
         """
@@ -387,22 +387,22 @@ elif page == "📊 About the Dataset":
     Welcome to the **Bank Customer Retirement Dataset**! This dataset offers a glimpse into the financial planning of 500 customers, focusing on their journey towards retirement. Let's break it down! 🚀
     """)
 
-    st.subheader("🗂️ Dataset Overview")
+    st.subheader("Dataset Overview")
     st.markdown("""
-    - **Customer ID**: 🔑 Unique identifier for each customer.
-    - **Age**: 🎂 Age of the customer, measured in years.
-    - **401K Savings**: 💰 Total savings in the customer's 401K retirement account.
-    - **Retire**: 🏖️ Binary indicator:
+    - **Customer ID**: Unique identifier for each customer.
+    - **Age**: Age of the customer, measured in years.
+    - **401K Savings**: Total savings in the customer's 401K retirement account.
+    - **Retire**: Binary indicator:
     - `1`: Retired.
     - `0`: Not retired.
     """)
 
-    st.subheader("✨ Key Features")
+    st.subheader("Key Features")
     st.write("""
     With **500 records** and **no missing data** (yay! 🎉), this dataset is ***"perfect"*** for:
-    - 📈 Predictive modeling.
-    - 🧐 Financial behavior analysis.
-    - 🧠 Insights into retirement trends.
+    - Predictive modeling.
+    - Financial behavior analysis.
+    - Insights into retirement trends.
     """)
 
     st.markdown("Let's dive into the data and uncover some interesting patterns! 🔍")
@@ -410,11 +410,11 @@ elif page == "📊 About the Dataset":
 
     st.markdown("---")
 
-    st.header("📚 Dataset Overview")
+    st.header("Dataset Overview")
     st.write("**Shape of the Dataset:**", data.shape)
     st.write("**Columns:**", data.columns.tolist())
 
-    st.subheader("📈 Data Types and Missing Values")
+    st.subheader("Data Types and Missing Values")
     data_types = data.dtypes.reset_index()
     data_types.columns = ['Column', 'Data Type']
     missing_values = data.isnull().sum().reset_index()
@@ -423,13 +423,13 @@ elif page == "📊 About the Dataset":
     st.dataframe(buffer_df.style.set_properties(**{'text-align': 'center'}))
 
 
-    st.subheader("📊 Statistical Summary")
+    st.subheader("Statistical Summary")
     st.dataframe(
         data.describe().round(2).style.format("{:.2f}").set_properties(**{'text-align': 'center', 'background-color': '#2c2c2c'}),
         use_container_width=True
     )
 
-    st.subheader("🔥 Correlation Heatmap")
+    st.subheader("Correlation Heatmap")
     corr = data.corr()
     fig_corr = px.imshow(
         corr,
@@ -447,7 +447,7 @@ elif page == "📊 About the Dataset":
     )
     st.plotly_chart(fig_corr, use_container_width=True)
 
-    st.subheader("📈 Distribution of Numerical Features")
+    st.subheader("Distribution of Numerical Features")
     numerical_features = ['Age', '401K Savings']
     selected_features = st.multiselect("Select Features for Distribution Plots", numerical_features, default=numerical_features)
     bin_size = st.slider("Select Number of Bins", min_value=10, max_value=50, value=30, step=5)
@@ -471,7 +471,7 @@ elif page == "📊 About the Dataset":
         )
         st.plotly_chart(fig_dist, use_container_width=True)
 
-    st.subheader("📦 Box Plots of Numerical Features")
+    st.subheader("Box Plots of Numerical Features")
     selected_box = st.multiselect("Select Features for Box Plots", numerical_features, default=numerical_features)
     group_by = st.selectbox("Group by (optional)", [None] + data.columns.tolist(), index=0)
 
@@ -492,7 +492,7 @@ elif page == "📊 About the Dataset":
         st.plotly_chart(fig_box, use_container_width=True)
 
     
-    st.subheader("🔢 Count Plot for Target Variable")
+    st.subheader("Count Plot for Target Variable")
     if 'Retire' in data.columns:
         count_data = data['Retire'].value_counts().reset_index()
         count_data.columns = ['Retire', 'Count']
@@ -515,9 +515,9 @@ elif page == "📊 About the Dataset":
         )
         st.plotly_chart(fig_count, use_container_width=True)
     else:
-        st.write("❌ Target variable 'Retire' not found in the dataset.")
+        st.write("Target variable 'Retire' not found in the dataset.")
 
-    st.subheader("💰 Savings Distribution by Age Group")
+    st.subheader("Savings Distribution by Age Group")
 
     age_bins = st.slider("Define Number of Age Groups", min_value=3, max_value=10, value=5)
     data['Age Group'] = pd.cut(data['Age'], bins=age_bins).astype(str)
@@ -555,12 +555,12 @@ elif page == "📊 About the Dataset":
         )
         st.plotly_chart(fig_scatter, use_container_width=True)
 
-    st.subheader("🎯 Savings Goal Achievement")
+    st.subheader("Savings Goal Achievement")
     savings_goal = st.number_input("Set a Savings Goal ($)", value=100000, step=50000)
     goal_achievers = data[data['401K Savings'] >= savings_goal]
     goal_percentage = len(goal_achievers) / len(data) * 100
 
-    st.metric("📊 Percentage of Individuals Meeting Savings Goal", f"{goal_percentage:.2f}%")
+    st.metric("Percentage of Individuals Meeting Savings Goal", f"{goal_percentage:.2f}%")
     fig_goal = px.histogram(
         data,
         x='401K Savings',
@@ -577,7 +577,7 @@ elif page == "📊 About the Dataset":
     st.plotly_chart(fig_goal, use_container_width=True)
 
    
-    st.subheader("📈 Retirement Likelihood by Age and Savings")
+    st.subheader("Retirement Likelihood by Age and Savings")
     if 'Retire' in data.columns:
         fig_density = px.density_heatmap(
             data,
@@ -595,7 +595,7 @@ elif page == "📊 About the Dataset":
         )
         st.plotly_chart(fig_density, use_container_width=True)
 
-    st.subheader("🧠 Fun Facts About Retirement in the USA 🇺🇸")
+    st.subheader("Fun Facts About Retirement in the USA 🇺🇸")
     fun_facts = [
         "💡 **Fact 1:** The average American retires at age 65.",
         "💡 **Fact 2:** Approximately 50% of retirees feel financially unprepared.",
@@ -609,8 +609,8 @@ elif page == "📊 About the Dataset":
 # -------------------------
 # About the Model Page
 # -------------------------
-elif page == "🧠 About the Model":
-    st.title("🧠 About the Model")
+elif page == "About the Model":
+    st.title("About the Model")
 
     st.markdown(
         """
@@ -637,7 +637,7 @@ elif page == "🧠 About the Model":
 
 
 
-    st.subheader("🔍 Model Building and Evaluation: Random Forest Classifier")
+    st.subheader("Model Building and Evaluation: Random Forest Classifier")
 
     st.write("""
     In this section, we showcase how the model was optimized using **RandomizedSearchCV**, followed by an evaluation of its performance on test data. Let's dive in! 🚀
@@ -649,7 +649,7 @@ elif page == "🧠 About the Model":
     Let's outline how the model was built using **RandomizedSearchCV** to find the optimal hyperparameters for a Random Forest Classifier. Let's walk through the process! 🚀
     """)
 
-    st.subheader("🎯 Parameter Grid")
+    st.subheader("Parameter Grid")
     st.code("""
     param_grid = {
         'classifier__n_estimators': [100, 200, 300, 400, 500],
@@ -663,12 +663,12 @@ elif page == "🧠 About the Model":
 
     st.write("""
     The **parameter grid** above explores different combinations of hyperparameters:
-    - **n_estimators**: Number of trees in the forest 🌲.
-    - **max_depth**: Maximum depth of each tree 🌳.
-    - **min_samples_split**: Minimum number of samples required to split an internal node ✂️.
-    - **min_samples_leaf**: Minimum number of samples required to be at a leaf node 🍂.
-    - **max_features**: Number of features considered for splitting at each node 📊.
-    - **bootstrap**: Whether to use bootstrap samples when building trees 🥾.
+    - **n_estimators**: Number of trees in the forest.
+    - **max_depth**: Maximum depth of each tree.
+    - **min_samples_split**: Minimum number of samples required to split an internal node .
+    - **min_samples_leaf**: Minimum number of samples required to be at a leaf node.
+    - **max_features**: Number of features considered for splitting at each node.
+    - **bootstrap**: Whether to use bootstrap samples when building trees.
     """)
 
     st.subheader("🔧 RandomizedSearchCV Setup")
@@ -690,8 +690,8 @@ elif page == "🧠 About the Model":
     - **n_iter=10**: Randomly sample 10 combinations of hyperparameters.
     - **cv=5**: Perform 5-fold cross-validation for each combination.
     - **verbose=2**: Show real-time updates on the fitting process.
-    - **random_state=42**: Ensures reproducibility of results 🎲.
-    - **n_jobs=-1**: Utilizes all available CPU cores for parallel computation 🖥️.
+    - **random_state=42**: Ensures reproducibility of results.
+    - **n_jobs=-1**: Utilizes all available CPU cores for parallel computation.
     - **scoring='accuracy'**: Evaluates model performance based on accuracy. 
     """)
 
