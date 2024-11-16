@@ -249,11 +249,7 @@ if page == "Home":
     )
 
     image = Image.open("streamlit.jpg")
-    resized_img = image.resize((5000, 5000)) 
-
-    col1, col2, col3 = st.columns(3)
-    with col2:
-        st.image(resized_img, caption="Credits: DALL·E", width=700)
+    st.image(image, caption="Credits: DALL·E", width=700)
 
 
 # -------------------------
@@ -263,11 +259,7 @@ elif page == "Get Your Predictions":
     st.title("Retirement Prediction")
 
     image = Image.open("prediction.jpg")
-    resized_img = image.resize((5000, 5000)) 
-
-    col1, col2, col3 = st.columns(3)
-    with col2:
-        st.image(resized_img, caption="Credits: DALL·E", width=700)
+    st.image(image, caption="Credits: DALL·E", width=700)
 
     st.markdown("---")
 
@@ -767,11 +759,7 @@ elif page == "About the Model":
 
 
     image = Image.open("rfc.jpg")
-    resized_img = image.resize((5000, 5000)) 
-
-    col1, col2, col3 = st.columns(3)
-    with col2:
-        st.image(resized_img, caption="Credits: DALL·E", width=700)
+    st.image(image, caption="Credits: DALL·E", width=700)
 
 # -------------------------
 # Footer
