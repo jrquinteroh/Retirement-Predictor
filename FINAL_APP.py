@@ -250,11 +250,11 @@ if page == "Home":
 
     image = Image.open("streamlit.jpg")
     resized_img = image.resize((500, 400)) 
-    st.image(resized_img, caption="Credits: DALL·E")
 
     col1, col2, col3 = st.columns(3)
     with col2:
-        st.image("path_to_image.jpg", use_column_width=True)
+        st.image(resized_img, caption="Credits: DALL·E")
+
 
 # -------------------------
 # Get Your Predictions Page
