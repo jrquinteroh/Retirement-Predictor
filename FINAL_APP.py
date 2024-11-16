@@ -241,7 +241,7 @@ if page == "🏠 Home":
 
             📧 Contact
 
-            Have questions or feedback? Reach out at [jrquinteroh@student.ie.edu](mailto:jrquinteroh@student.ie.edu) 📬
+            Have questions or feedback? Reach out at jrquinteroh@student.ie.edu 📬
         </div>
         """,
         unsafe_allow_html=True
