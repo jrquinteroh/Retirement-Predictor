@@ -248,14 +248,13 @@ if page == "Home":
         unsafe_allow_html=True
     )
 
-    image = Image.open("streamlit.jpg")
-    #st.image(image, caption="Credits: DALL·E", use_column_width=True)
-
-    resized_img = image.resize((300, 200))  # Resize to 300x200 pixels
-
-    # Display resized image
+    image = Image.open("streamlit.jpg", caption="Credits: DALL·E")
+    resized_img = image.resize((500, 400)) 
     st.image(resized_img)
 
+    col1, col2, col3 = st.columns(3)
+    with col2:
+        st.image("path_to_image.jpg", use_column_width=True)
 
 # -------------------------
 # Get Your Predictions Page
